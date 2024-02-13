@@ -1,0 +1,7 @@
+export const DeleteJob = () => {
+  return (
+    <div>
+      <h1>DeleteJob</h1>
+    </div>
+  );
+};
