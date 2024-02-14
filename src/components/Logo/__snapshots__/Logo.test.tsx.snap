@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Logo > Should render default 1`] = `
+<div>
+  <img
+    alt="Logo"
+    src="./src/assets/logo.svg"
+  />
+</div>
+`;
