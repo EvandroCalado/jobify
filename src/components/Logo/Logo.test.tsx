@@ -4,9 +4,14 @@ import { renderTheme } from "../../styles/render-theme";
 
 describe("Logo", () => {
   it("Should render default", () => {
-    const { container } = renderTheme(<Logo />);
+    renderTheme(<Logo />);
 
     expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
+  it("Should render a snapshot", () => {
+    const { container } = renderTheme(<Logo />);
+
     expect(container).toMatchSnapshot();
   });
 });
