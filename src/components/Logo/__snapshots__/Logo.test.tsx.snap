@@ -4,15 +4,7 @@ exports[`Logo > Should render a snapshot 1`] = `
 <div>
   <img
     alt="Logo"
-    src="./src/assets/logo.svg"
-  />
-</div>
-`;
-
-exports[`Logo > Should render default 1`] = `
-<div>
-  <img
-    alt="Logo"
+    class="logo"
     src="./src/assets/logo.svg"
   />
 </div>
