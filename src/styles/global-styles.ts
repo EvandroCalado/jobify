@@ -9,9 +9,11 @@ export const GlobalStyles = createGlobalStyle`
   font-weight: 400;
   line-height: 1;
 }
+
 p {
   margin: 0;
 }
+
 h1,
 h2,
 h3,
