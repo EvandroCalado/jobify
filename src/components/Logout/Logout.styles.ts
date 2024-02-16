@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
       position: absolute;
       top: 45px;
       left: 0;
-      width: 100%;
+      width: max-content;
       box-shadow: ${theme.shadows.shadow2};
       text-align: center;
       visibility: hidden;
@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
 
     .dropdown-btn {
       border-radius: ${theme.borders.borderRadius};
-      padding: 0.5rem;
+      padding: 0.5rem 1.85rem;
       background-color: transparent;
       border-color: transparent;
       color: ${theme.colors.white};
