@@ -1,5 +1,5 @@
 import { FaAlignLeft } from "react-icons/fa";
-import { Logo } from "..";
+import { Logo, Logout, ThemeToggle } from "..";
 import { useDashboardContext } from "../../hooks/useDashboardContext";
 import * as Styled from "./Navbar.styles";
 
@@ -18,7 +18,10 @@ export const Navbar = () => {
           <h4 className="logo-text">dashboard</h4>
         </div>
 
-        <div className="btn-container">toggle logout</div>
+        <div className="btn-container">
+          <ThemeToggle />
+          <Logout />
+        </div>
       </nav>
     </Styled.Wrapper>
   );
