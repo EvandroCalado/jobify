@@ -2,6 +2,7 @@ import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { useDashboardContext } from "../../hooks/useDashboardContext";
 import { links } from "../../utils/links";
+import * as Styled from "./NavLinks.styles";
 
 export interface NavLinksProps {
   isBigSidebar?: boolean | undefined;
@@ -11,7 +12,7 @@ export const NavLinks: FC<NavLinksProps> = ({ isBigSidebar }) => {
   const { toggleSidebar } = useDashboardContext();
 
   return (
-    <nav className="nav-links">
+    <Styled.Wrapper className="nav-links">
       {links.map((link) => (
         <NavLink
           to={link.path}
@@ -24,6 +25,6 @@ export const NavLinks: FC<NavLinksProps> = ({ isBigSidebar }) => {
           {link.text}{" "}
         </NavLink>
       ))}
-    </nav>
+    </Styled.Wrapper>
   );
 };
