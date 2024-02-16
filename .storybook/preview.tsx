@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
+import { withRouter } from "storybook-addon-react-router-v6";
 import { ThemeProvider } from "styled-components";
+import { DashboardProvider } from "../src/contexts/DashboardProvider";
 import { GlobalStyles } from "../src/styles/global-styles";
 import { theme } from "../src/styles/theme";
 
@@ -30,10 +32,13 @@ export const preview: Preview = {
 };
 
 export const decorators = [
+  withRouter,
   (Story) => (
-    <ThemeProvider theme={theme}>
-      <Story />
-      <GlobalStyles />
-    </ThemeProvider>
+    <DashboardProvider>
+      <ThemeProvider theme={theme}>
+        <Story />
+        <GlobalStyles />
+      </ThemeProvider>
+    </DashboardProvider>
   ),
 ];
