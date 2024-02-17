@@ -17,6 +17,10 @@ export default mergeConfig(
         "src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
         "src/**/{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}",
       ],
+      coverage: {
+        enabled: true,
+        exclude: ["src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+      },
     },
   })
 );
