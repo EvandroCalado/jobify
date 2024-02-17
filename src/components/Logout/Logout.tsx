@@ -18,7 +18,10 @@ export const Logout = () => {
         <FaCaretDown />
       </button>
 
-      <div className={showLogout ? "dropdown show-dropdown" : "dropdown"}>
+      <div
+        className={showLogout ? "dropdown show-dropdown" : "dropdown"}
+        data-testid="dropdown"
+      >
         <button className="dropdown-btn" onClick={logoutUser}>
           Logout
         </button>
