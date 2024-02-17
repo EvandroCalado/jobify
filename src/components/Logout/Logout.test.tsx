@@ -24,4 +24,10 @@ describe("<Logout />", () => {
       visibility: "visible",
     });
   });
+
+  it("should render a snapshot", () => {
+    const { container } = renderTheme(<Logout />);
+
+    expect(container).toMatchSnapshot();
+  });
 });
