@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { Logo } from ".";
 import { renderTheme } from "../../styles/render-theme";
 
-describe("Logo", () => {
+describe("<Logo />", () => {
   it("Should render default", () => {
     renderTheme(<Logo />);
 

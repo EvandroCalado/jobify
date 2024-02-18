@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Logo > Should render a snapshot 1`] = `
+exports[`<Logo /> > Should render a snapshot 1`] = `
 <div>
   <img
     alt="Logo"
