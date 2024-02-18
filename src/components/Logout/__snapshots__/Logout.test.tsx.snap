@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Logout /> > should render default 1`] = `
+exports[`<Logout /> > should render default component 1`] = `
 <div>
   <div
     class="sc-beySPh hzmUMK"

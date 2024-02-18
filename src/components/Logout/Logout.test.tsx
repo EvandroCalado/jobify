@@ -9,7 +9,7 @@ describe("<Logout />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should render default", () => {
+  it("should render default component", () => {
     expect(screen.getByRole("button", { name: "Guest" })).toBeInTheDocument();
     expect(screen.getByTestId("dropdown")).toBeInTheDocument();
     expect(screen.getByTestId("dropdown")).toHaveStyle({
@@ -24,6 +24,18 @@ describe("<Logout />", () => {
 
     expect(screen.getByTestId("dropdown")).toHaveStyle({
       visibility: "visible",
+    });
+    expect(screen.getByTestId("dropdown")).toHaveClass(
+      "show-dropdown",
+      "dropdown"
+    );
+
+    fireEvent.click(button);
+
+    expect(screen.getByTestId("dropdown")).not.toHaveClass("show-dropdown");
+    expect(screen.getByTestId("dropdown")).toHaveClass("dropdown");
+    expect(screen.getByTestId("dropdown")).toHaveStyle({
+      visibility: "hidden",
     });
   });
 });

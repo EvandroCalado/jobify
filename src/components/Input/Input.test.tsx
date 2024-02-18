@@ -3,7 +3,7 @@ import { Input } from ".";
 import { renderTheme } from "../../styles/render-theme";
 
 describe("<Input />", () => {
-  it("Should render default", () => {
+  it("Should render default component", () => {
     renderTheme(<Input placeholder="test" label="label" />);
 
     expect(screen.getByPlaceholderText("test")).toBeInTheDocument();
