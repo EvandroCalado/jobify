@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { Input } from ".";
 import { renderTheme } from "../../styles/render-theme";
 
-describe("Input", () => {
+describe("<Input />", () => {
   it("Should render default", () => {
     renderTheme(<Input placeholder="test" label="label" />);
 
