@@ -13,13 +13,19 @@ interface DashboardProviderProps {
   children: React.ReactNode;
 }
 
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem("jobifyDarkMode") === "true";
+
+  return isDarkTheme;
+};
+
 const DashboardContextInitialValues = {
   user: { name: "Guest" },
   showSidebar: false,
-  isDarkTheme: false,
-  toggleDarkTheme: () => console.log("toggle dark theme"),
-  toggleSidebar: () => console.log("toggle sidebar"),
-  logoutUser: () => console.log("logout"),
+  isDarkTheme: checkDefaultTheme(),
+  toggleDarkTheme: () => {},
+  toggleSidebar: () => {},
+  logoutUser: () => {},
 };
 
 export const DashboardContext = createContext<DashboardContextProps>(
@@ -30,11 +36,12 @@ export const DashboardProvider: FC<DashboardProviderProps> = ({ children }) => {
   const user = { name: "Guest" };
 
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme] = useState(false);
-  // setIsDarkTheme
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
 
   const toggleDarkTheme = () => {
-    console.log("toggle dark theme");
+    const newDarkMode = !isDarkTheme;
+    localStorage.setItem("jobifyDarkMode", newDarkMode.toString());
+    setIsDarkTheme(!isDarkTheme);
   };
 
   const toggleSidebar = () => {
