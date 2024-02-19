@@ -4,7 +4,7 @@ import { withRouter } from "storybook-addon-react-router-v6";
 import { ThemeProvider } from "styled-components";
 import { DashboardProvider } from "../src/contexts/DashboardProvider";
 import { GlobalStyles } from "../src/styles/global-styles";
-import { theme } from "../src/styles/theme";
+import { darkTheme, lightTheme } from "../src/styles/theme";
 
 export const preview: Preview = {
   parameters: {
@@ -20,11 +20,11 @@ export const preview: Preview = {
       values: [
         {
           name: "light",
-          value: theme.colors.backgroundColor,
+          value: lightTheme.colors.backgroundColor,
         },
         {
           name: "dark",
-          value: theme.colors.darkBackgroundColor,
+          value: darkTheme.colors.backgroundColor,
         },
       ],
     },
@@ -35,7 +35,7 @@ export const decorators = [
   withRouter,
   (Story) => (
     <DashboardProvider>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <Story />
         <GlobalStyles />
       </ThemeProvider>
