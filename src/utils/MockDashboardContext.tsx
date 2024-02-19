@@ -18,4 +18,4 @@ export const MockDashboardProvider = ({
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useDashboardContext = () => useContext(MockDashboardContext);
+export const useMockDashboardContext = () => useContext(MockDashboardContext);
