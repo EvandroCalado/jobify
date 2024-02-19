@@ -1,4 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { useDashboardContext } from "./hooks/useDashboardContext";
 import {
   AddJob,
   Admin,
@@ -12,6 +14,8 @@ import {
   Register,
   Stats,
 } from "./pages";
+import { GlobalStyles } from "./styles/global-styles";
+import { darkTheme, lightTheme } from "./styles/theme";
 
 const router = createBrowserRouter([
   {
@@ -62,5 +66,12 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  const { isDarkTheme } = useDashboardContext();
+
+  return (
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <RouterProvider router={router} />
+      <GlobalStyles />
+    </ThemeProvider>
+  );
 };
