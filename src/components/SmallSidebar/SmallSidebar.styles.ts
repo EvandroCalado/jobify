@@ -45,32 +45,6 @@ export const Wrapper = styled.div`
       cursor: pointer;
     }
 
-    .nav-links {
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-link {
-      display: flex;
-      align-items: center;
-      color: ${theme.colors.textSecondaryColor};
-      padding: 1rem 0;
-      text-transform: capitalize;
-      transition: ${theme.transitions.fast};
-    }
-
-    .nav-link:hover {
-      color: ${theme.colors.primary500};
-    }
-
-    .icon {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      display: grid;
-      place-items: center;
-    }
-
     .active {
       color: ${theme.colors.primary500};
     }
