@@ -15,30 +15,34 @@ export const preview: Preview = {
         date: /Date$/i,
       },
     },
-    backgrounds: {
-      default: "light",
-      values: [
-        {
-          name: "light",
-          value: lightTheme.colors.backgroundColor,
-        },
-        {
-          name: "dark",
-          value: darkTheme.colors.backgroundColor,
-        },
-      ],
+  },
+};
+
+export const globalTypes = {
+  theme: {
+    name: "Theme",
+    description: "Global theme for components",
+    defaultValue: "light",
+    toolbar: {
+      icon: "paintbrush",
+      items: ["light", "dark"],
+      showName: true,
     },
   },
 };
 
 export const decorators = [
   withRouter,
-  (Story) => (
-    <DashboardProvider>
-      <ThemeProvider theme={lightTheme}>
-        <Story />
-        <GlobalStyles />
-      </ThemeProvider>
-    </DashboardProvider>
-  ),
+  (Story, context) => {
+    const theme = context.globals.theme === "light" ? lightTheme : darkTheme;
+
+    return (
+      <DashboardProvider>
+        <ThemeProvider theme={theme}>
+          <Story />
+          <GlobalStyles />
+        </ThemeProvider>
+      </DashboardProvider>
+    );
+  },
 ];
