@@ -19,7 +19,7 @@ export const Wrapper = styled.nav`
     }
 
     .nav-link:hover {
-      padding-left: 3rem;
+      padding-left: 2.5rem;
       color: ${theme.colors.primary500};
       transition: ${theme.transitions.fast};
     }
@@ -29,6 +29,12 @@ export const Wrapper = styled.nav`
       margin-right: 1rem;
       display: grid;
       place-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .nav-link:hover {
+        padding-left: 3rem;
+      }
     }
   `}
 `;
