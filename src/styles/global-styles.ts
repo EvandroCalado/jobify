@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
   body {
   background: ${({ theme }) => theme.colors.backgroundColor};
   color: ${({ theme }) => theme.colors.textColor};
