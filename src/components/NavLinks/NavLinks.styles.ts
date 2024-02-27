@@ -13,15 +13,14 @@ export const Wrapper = styled.nav`
       align-items: center;
       color: ${theme.colors.textSecondaryColor};
       padding: 1rem 0;
-      padding-left: 2.5rem;
+      padding-left: 0;
       text-transform: capitalize;
-      transition: padding-left 0.3s ease-in-out;
+      transition: ${theme.transitions.fast};
     }
 
     .nav-link:hover {
-      padding-left: 2.5rem;
       color: ${theme.colors.primary500};
-      transition: ${theme.transitions.fast};
+      transform: scale(1.1);
     }
 
     .icon {
@@ -32,7 +31,12 @@ export const Wrapper = styled.nav`
     }
 
     @media (min-width: 992px) {
+      .nav-link {
+        padding-left: 2.5rem;
+      }
+
       .nav-link:hover {
+        transform: scale(1);
         padding-left: 3rem;
       }
     }
