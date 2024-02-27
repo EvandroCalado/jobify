@@ -1,14 +1,21 @@
-import { Link } from "react-router-dom";
+import { Form, Link, useActionData, useNavigation } from "react-router-dom";
 import { Input, Logo } from "../../components";
 import * as Styled from "./Login.styles";
 
 export const Login = () => {
+  const errors = useActionData() as { msg: string };
+  const navigation = useNavigation();
+
+  const isSubmitting = navigation.state === "submitting";
+
   return (
     <Styled.Wrapper>
-      <form className="form">
+      <Form method="post" className="form">
         <Logo />
 
         <h4>login</h4>
+
+        {errors?.msg && <p style={{ color: "red" }}>{errors?.msg}</p>}
 
         <Input
           type="email"
@@ -22,16 +29,16 @@ export const Login = () => {
           type="password"
           id="password"
           name="password"
-          defaultValue="secret"
+          defaultValue="12345678"
           label="password"
         />
 
-        <button type="submit" className="btn btn-block">
-          submit
+        <button type="submit" className="btn btn-block" disabled={isSubmitting}>
+          {isSubmitting ? "submitting..." : "submit"}
         </button>
 
-        <button type="button" className="btn btn-block">
-          Guest User
+        <button type="button" className="btn btn-block" disabled={isSubmitting}>
+          {isSubmitting ? "submitting..." : "Guest User"}
         </button>
 
         <p>
@@ -40,7 +47,7 @@ export const Login = () => {
             Register
           </Link>
         </p>
-      </form>
+      </Form>
     </Styled.Wrapper>
   );
 };

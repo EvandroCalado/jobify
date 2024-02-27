@@ -22,7 +22,7 @@ import {
 } from "./pages";
 
 // actions
-import { registerAction } from "./actions";
+import { loginAction, registerAction } from "./actions";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/Login",
         element: <Login />,
+        action: loginAction,
       },
       {
         path: "/dashboard",
