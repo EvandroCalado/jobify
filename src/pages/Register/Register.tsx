@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
+import { Form, Link, useNavigation } from "react-router-dom";
 import { Input, Logo } from "../../components";
 import * as Styled from "./Register.styles";
 
 export const Register = () => {
+  const navigation = useNavigation();
+
+  const isSubmitting = navigation.state === "submitting";
+
   return (
     <Styled.Wrapper>
-      <form className="form">
+      <Form method="post" className="form">
         <Logo />
 
         <h4>Register</h4>
@@ -50,8 +54,8 @@ export const Register = () => {
           label="password"
         />
 
-        <button type="submit" className="btn btn-block">
-          submit
+        <button type="submit" className="btn btn-block" disabled={isSubmitting}>
+          {isSubmitting ? "submitting..." : "submit"}
         </button>
 
         <p>
@@ -60,7 +64,7 @@ export const Register = () => {
             Login
           </Link>
         </p>
-      </form>
+      </Form>
     </Styled.Wrapper>
   );
 };

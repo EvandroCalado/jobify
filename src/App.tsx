@@ -1,6 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
 import { useDashboardContext } from "./hooks/useDashboardContext";
+import { GlobalStyles } from "./styles/global-styles";
+import { darkTheme, lightTheme } from "./styles/theme";
+
+// pages
 import {
   AddJob,
   Admin,
@@ -14,8 +20,9 @@ import {
   Register,
   Stats,
 } from "./pages";
-import { GlobalStyles } from "./styles/global-styles";
-import { darkTheme, lightTheme } from "./styles/theme";
+
+// actions
+import { registerAction } from "./actions";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+        action: registerAction,
       },
       {
         path: "/Login",
@@ -71,6 +79,18 @@ export const App = () => {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <RouterProvider router={router} />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme={isDarkTheme ? "dark" : "light"}
+      />
       <GlobalStyles />
     </ThemeProvider>
   );
