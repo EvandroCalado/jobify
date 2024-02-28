@@ -39,11 +39,9 @@ export const Wrapper = styled.div`
       background-color: transparent;
       border-color: transparent;
       color: ${theme.colors.white};
-      letter-spacing: ${theme.fonts.spancings};
+      letter-spacing: ${theme.fonts.spacings};
       text-transform: capitalize;
       cursor: pointer;
-      width: 100%;
-      height: 100%;
     }
   `}
 `;

@@ -31,7 +31,7 @@ h5 {
   font-weight: 400;
   line-height: 1;
   text-transform: capitalize;
-  letter-spacing: ${({ theme }) => theme.fonts.spancings.letterSpacing};
+  letter-spacing: ${({ theme }) => theme.fonts.spacings.letterSpacing};
 }
 
 h1 {
@@ -85,7 +85,7 @@ ul {
   background: ${({ theme }) => theme.colors.primary500};
   border: transparent;
   border-radius: ${({ theme }) => theme.borders.borderRadius};
-  letter-spacing: ${({ theme }) => theme.fonts.spancings.letterSpacing};
+  letter-spacing: ${({ theme }) => theme.fonts.spacings.letterSpacing};
   padding: 0.65rem;
   box-shadow: ${({ theme }) => theme.shadows.shadow1};
   transition: ${({ theme }) => theme.transitions.fast};
@@ -160,7 +160,7 @@ button:disabled {
   font-size: ${({ theme }) => theme.fonts.size.smallText};
   margin-bottom: 0.3rem;
   text-transform: capitalize;
-  letter-spacing: ${({ theme }) => theme.fonts.spancings.letterSpacing};
+  letter-spacing: ${({ theme }) => theme.fonts.spacings.letterSpacing};
   line-height: 1.5;
 }
 
@@ -196,7 +196,7 @@ button:disabled {
 
 .form-alert {
   color: ${({ theme }) => theme.colors.redDark};
-  letter-spacing: ${({ theme }) => theme.fonts.spancings.letterSpacing};
+  letter-spacing: ${({ theme }) => theme.fonts.spacings.letterSpacing};
   text-transform: capitalize;
 }
 

@@ -45,7 +45,7 @@ export const lightTheme = {
       smallText: "0.875rem",
       extraSmallText: "0.7em",
     },
-    spancings: {
+    spacings: {
       letterSpacing: "1px",
     },
   },
@@ -123,7 +123,7 @@ export const darkTheme = {
       smallText: "0.875rem",
       extraSmallText: "0.7em",
     },
-    spancings: {
+    spacings: {
       letterSpacing: "1px",
     },
   },

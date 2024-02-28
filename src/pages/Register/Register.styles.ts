@@ -34,7 +34,7 @@ export const Wrapper = styled.div`
 
     .member-btn {
       color: ${theme.colors.primary500};
-      letter-spacing: ${theme.fonts.spancings.letterSpacing};
+      letter-spacing: ${theme.fonts.spacings.letterSpacing};
       margin-left: 0.25rem;
       transition: ${theme.transitions.fast};
     }
