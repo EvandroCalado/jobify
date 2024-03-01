@@ -147,7 +147,7 @@ button:disabled {
 /* form */
 .form {
   width: 90vw;
-  max-width: ${({ theme }) => theme.widths.fixedWidth};
+  max-width: ${({ theme }) => theme.widths.maxWidth};
   background: ${({ theme }) => theme.colors.backgroundSecondaryColor};
   border-radius: ${({ theme }) => theme.borders.borderRadius};
   box-shadow: ${({ theme }) => theme.shadows.shadow2};
