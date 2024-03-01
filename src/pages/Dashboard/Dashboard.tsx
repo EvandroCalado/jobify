@@ -5,7 +5,7 @@ import { Navbar, Sidebar, SmallSidebar } from "../../components";
 import { customFetch } from "../../utils/customFetch";
 import * as Styled from "./Dashboard.styles";
 
-interface UserProps {
+export interface UserProps {
   name: string;
   lastName: string;
   email: string;
